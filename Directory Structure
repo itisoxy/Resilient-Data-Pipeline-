@@ -1,0 +1,20 @@
+pipeline/                      <-- Root folder (repo name)
+│
+├── producer/                   <-- Producer app
+│   ├── producer.py
+│   ├── Dockerfile
+│   └── requirements.txt
+│
+├── consumer/                   <-- Consumer app
+│   ├── consumer.py
+│   ├── Dockerfile
+│   └── requirements.txt
+│
+├── monitoring/                 <-- Prometheus & Grafana configs
+│   ├── prometheus.yml
+│   └── dashboards/             <-- Grafana dashboards JSON
+│       └── sample_dashboard.json
+│
+├── docker-compose.yml
+├── README.md
+└── architecture.png            <-- Optional diagram of the pipeline
