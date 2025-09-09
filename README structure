@@ -1,0 +1,41 @@
+# Resilient Data Pipeline for FinTech Analytics
+
+## Overview
+A streaming data pipeline that simulates fintech fraud events, processes them in real-time, and stores them in DynamoDB. Monitoring is provided via Prometheus and Grafana.
+
+## Architecture
+![Pipeline Architecture](architecture.png)
+
+**Flow:**
+Producer → Kafka → Consumer → DynamoDB  
+Prometheus scrapes metrics → Grafana dashboards visualize
+
+## Components
+
+### Producer
+- Generates simulated fintech events
+- Written in Python
+- Containerized with Docker
+
+### Consumer
+- Processes events from Kafka
+- Stores in DynamoDB
+- Tracks metrics for Prometheus
+
+### Monitoring
+- Prometheus metrics counters: `events_processed_total`, `consumer_errors_total`
+- Grafana dashboards visualize pipeline health
+
+## Running Locally
+```bash
+# Build & start containers
+docker-compose up -d --build
+
+# Check running containers
+docker ps
+
+# View Prometheus metrics
+http://localhost:9090
+
+# View Grafana dashboards
+http://localhost:3000
