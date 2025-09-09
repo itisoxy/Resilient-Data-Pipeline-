@@ -1,0 +1,28 @@
+
+
+Objective:
+Build a streaming data pipeline to simulate fintech fraud events, process them in real-time, and monitor pipeline health with Prometheus and Grafana.
+
++-----------+       +--------+       +----------+
+| Producer  | --->  | Kafka  | --->  | Consumer |
++-----------+       +--------+       +----------+
+                                      |
+                                      v
+                                +------------+
+                                | DynamoDB   |
+                                +------------+
+
+Monitoring:
+- Prometheus scrapes metrics from Producer & Consumer
+- Grafana dashboards visualize metrics and errors
+Portfolio Project: Resilient Data Pipeline for FinTech Analytics
+
+Producer: generates simulated fintech fraud events
+
+Kafka: message broker for event streaming (KRaft or Confluent)
+
+Consumer: processes events and stores in DynamoDB
+
+Monitoring: Prometheus metrics + Grafana dashboards
+
+Alerting: designed to detect pipeline failures or lag (not implemented live due to Docker network issues)
